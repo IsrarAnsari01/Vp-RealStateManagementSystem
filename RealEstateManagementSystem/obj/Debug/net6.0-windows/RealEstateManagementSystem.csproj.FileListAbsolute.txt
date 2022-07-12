@@ -21,3 +21,13 @@ D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSyste
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form5.resources
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form6.resources
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form7.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\FireSharp.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\FireSharp.Serialization.JsonNet.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\Microsoft.Threading.Tasks.Extensions.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\Microsoft.Threading.Tasks.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\System.Net.Http.Extensions.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\System.Net.Http.Primitives.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\RestSharp.dll
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.csproj.CopyComplete

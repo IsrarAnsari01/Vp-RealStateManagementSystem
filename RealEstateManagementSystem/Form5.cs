@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
 namespace RealEstateManagementSystem
 {
     public partial class Form5 : Form
@@ -16,12 +18,27 @@ namespace RealEstateManagementSystem
         {
             InitializeComponent();
         }
+        
+        IFirebaseConfig config = new FirebaseConfig()
+        {
+            AuthSecret = "SA6c9TeKNfpRkSOEXbXnu16mooMaqNickhkxurM1",
+            BasePath = "https://winformcrudopr-default-rtdb.firebaseio.com/"
+        };
+        IFirebaseClient client;
+
         string randomID;
         string[] countries = { "Pakistan" };
         string[] citiesInPak = { "Karachi", "Lahore", "Islamabad", "KPK", "Faisalabad", "Multan", "Peshawar", "Sialkot", "Quetta", "Hydrabad"};
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            try
+            {
+                client = new FireSharp.FirebaseClient(config);
+            } catch
+            {
+                MessageBox.Show("Error In Connection to DB", "Error In Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             foreach(string country in countries)
             {
                 comboBox1.Items.Add(country);
@@ -41,10 +58,6 @@ namespace RealEstateManagementSystem
             foreach(string city in citiesInPak)
             {
                 comboBox2.Items.Remove(city);
-            }
-            foreach (string country in countries)
-            {
-                comboBox1.Items.Remove(country);
             }
 
         }
@@ -93,10 +106,24 @@ namespace RealEstateManagementSystem
             string city = comboBox2.Text;
             string state = textBox4.Text;
             string address = richTextBox1.Text;
-
-            if(name.Trim().Length > 0 && email.Trim().Length > 0 && cnic.Trim().Length > 0 && phoneNumber.Trim().Length > 0 && gender.Trim().Length > 0 && country.Trim().Length > 0 && city.Trim().Length > 0 && state.Trim().Length > 0 && address.Trim().Length > 0)
+            randID();
+            if (name.Trim().Length > 0 && email.Trim().Length > 0 && cnic.Trim().Length > 0 && phoneNumber.Trim().Length > 0 && gender.Trim().Length > 0 && country.Trim().Length > 0 && city.Trim().Length > 0 && state.Trim().Length > 0 && address.Trim().Length > 0)
             {
-
+                Owner owner = new Owner()
+                {
+                    Id = randomID,
+                    name = name,
+                    email = email,
+                    phoneNumber = phoneNumber,
+                    gender = gender,
+                    country = country,
+                    city = city,
+                    state = state,
+                    address = address,
+                };
+                var saveUser = client.Set("Owners/" + randomID, owner);
+                MessageBox.Show("Owner Added with id " + randomID + " Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearFields();
             } else
             {
                 MessageBox.Show("All are required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

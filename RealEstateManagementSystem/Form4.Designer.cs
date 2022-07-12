@@ -44,6 +44,7 @@
             this.label1.Size = new System.Drawing.Size(177, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Owner\'s List";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
@@ -65,6 +66,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form4";
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
