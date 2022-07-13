@@ -55,6 +55,7 @@ namespace RealEstateManagementSystem
             dataGridView1.Columns.Add("Id", "ID");
             dataGridView1.Columns.Add("name", "Name");
             dataGridView1.Columns.Add("email", "Name");
+            dataGridView1.Columns.Add("cnic", "NIC Number");
             dataGridView1.Columns.Add("phoneNumber", "Phone Number");
             dataGridView1.Columns.Add("gender", "Gender");
             dataGridView1.Columns.Add("country", "Country");
@@ -62,9 +63,12 @@ namespace RealEstateManagementSystem
             dataGridView1.Columns.Add("state", "State");
             dataGridView1.Columns.Add("address", "Address");
             dataGridView1.Columns.Add(deleteButton);
-            foreach (var items in Owner)
+            if(Owner != null)
             {
-                dataGridView1.Rows.Add(items.Value.Id, items.Value.name, items.Value.email, items.Value.phoneNumber, items.Value.gender, items.Value.country, items.Value.city, items.Value.state, items.Value.address);
+                foreach (var items in Owner)
+                {
+                    dataGridView1.Rows.Add(items.Value.Id, items.Value.name, items.Value.email, items.Value.cnic, items.Value.phoneNumber, items.Value.gender, items.Value.country, items.Value.city, items.Value.state, items.Value.address);
+                }
             }
         }
 
@@ -76,12 +80,19 @@ namespace RealEstateManagementSystem
                 FirebaseResponse res = client.Get(@"Owners");
                 Dictionary<string, Owner> data = JsonConvert.DeserializeObject<Dictionary<string, Owner>>(res.Body.ToString());
                 renderLists(data);
+
             }
             catch
             {
                 MessageBox.Show("Error In Connection to DB", "Error In Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form6 f6 = new Form6();
+            f6.Show();
         }
     }
 }

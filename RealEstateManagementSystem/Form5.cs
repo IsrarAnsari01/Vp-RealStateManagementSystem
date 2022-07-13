@@ -18,7 +18,7 @@ namespace RealEstateManagementSystem
         {
             InitializeComponent();
         }
-        
+        public string userId;
         IFirebaseConfig config = new FirebaseConfig()
         {
             AuthSecret = "SA6c9TeKNfpRkSOEXbXnu16mooMaqNickhkxurM1",
@@ -35,6 +35,30 @@ namespace RealEstateManagementSystem
             try
             {
                 client = new FireSharp.FirebaseClient(config);
+                if(userId != null)
+                {
+                    var res = client.Get("Owners/" + userId);
+                    Owner user = res.ResultAs<Owner>();
+                    textBox1.Text = user.name;
+                    textBox2.Text = user.email;
+                    textBox3.Text = user.cnic;
+                    textBox5.Text = user.phoneNumber;
+                    if(user.gender == "Male")
+                    {
+                        radioButton1.Checked = true;
+                    } else if (user.gender == "Female")
+                    {
+                        radioButton2.Checked = true;
+                    } else
+                    {
+                        radioButton3.Checked = true;
+                    }
+                    comboBox1.Text = user.country;
+                    comboBox2.Text = user.city;
+                    textBox4.Text = user.state;
+                    richTextBox1.Text = user.address;
+                    button2.Text = "Update";
+                }
             } catch
             {
                 MessageBox.Show("Error In Connection to DB", "Error In Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -111,9 +135,10 @@ namespace RealEstateManagementSystem
             {
                 Owner owner = new Owner()
                 {
-                    Id = randomID,
+                    Id = userId != null ? userId : randomID,
                     name = name,
                     email = email,
+                    cnic = cnic,
                     phoneNumber = phoneNumber,
                     gender = gender,
                     country = country,
@@ -121,8 +146,17 @@ namespace RealEstateManagementSystem
                     state = state,
                     address = address,
                 };
-                var saveUser = client.Set("Owners/" + randomID, owner);
-                MessageBox.Show("Owner Added with id " + randomID + " Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (userId != null)
+                {
+                    var updateUser = client.Update("Owners/" + userId, owner);
+                    MessageBox.Show("Owner Updated with id " + userId + " Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                } else
+                {
+                    var saveUser = client.Set("Owners/" + randomID, owner);
+                    MessageBox.Show("Owner Added with id " + randomID + " Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                }
                 clearFields();
             } else
             {
