@@ -19,7 +19,8 @@ namespace RealEstateManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Form7 f7 = new Form7();
+            f7.Show();
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)

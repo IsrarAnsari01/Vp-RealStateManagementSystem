@@ -12,9 +12,9 @@ using FireSharp.Interfaces;
 
 namespace RealEstateManagementSystem
 {
-    public partial class Form6 : Form
+    public partial class Form10 : Form
     {
-        public Form6()
+        public Form10()
         {
             InitializeComponent();
         }
@@ -24,43 +24,38 @@ namespace RealEstateManagementSystem
             BasePath = "https://winformcrudopr-default-rtdb.firebaseio.com/"
         };
         IFirebaseClient client;
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string userID = textBox1.Text;  
-            if(userID != null)
+            string userID = textBox1.Text;
+            if (userID != null)
             {
                 try
                 {
                     client = new FireSharp.FirebaseClient(config);
-                    var res = client.Get("Owners/" + userID);
-                    Owner user = res.ResultAs<Owner>();
-                    if(user != null)
+                    var res = client.Get("Clients/" + userID);
+                    Client user = res.ResultAs<Client>();
+                    if (user != null)
                     {
-                    Form5 f5 = new Form5();
-                    f5.userId = userID;
-                    f5.Show();
-                    this.Close();
+                        Form9 f9 = new Form9();
+                        f9.userId = userID;
+                        f9.Show();
+                        this.Close();
+                    } else
+                    {
+                        MessageBox.Show("User Not Found", "Missing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("User Not Found", "Missing Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Something went wrong", "Unknown Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
-            } else
+
+            }
+            else
             {
                 MessageBox.Show("Please Enter User ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void Form6_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,5 +16,17 @@ namespace RealEstateManagementSystem
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form8 f8 = new Form8();
+            f8.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form9 form9 = new Form9();  
+            form9.Show();
+        }
     }
 }

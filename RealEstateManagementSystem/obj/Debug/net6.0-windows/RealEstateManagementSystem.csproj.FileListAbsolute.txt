@@ -31,3 +31,6 @@ D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSyste
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\bin\Debug\net6.0-windows\RestSharp.dll
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.csproj.CopyComplete
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form10.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form8.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form9.resources
