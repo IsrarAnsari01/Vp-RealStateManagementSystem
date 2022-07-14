@@ -105,6 +105,7 @@
             button5.TabIndex = 5;
             button5.Text = "View Properties";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form2
             // 

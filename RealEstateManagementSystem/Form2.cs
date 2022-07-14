@@ -39,5 +39,11 @@ namespace RealEstateManagementSystem
             Form11 f11 = new Form11();
             f11.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form15 f15 = new Form15();
+            f15.Show();
+        }
     }
 }
