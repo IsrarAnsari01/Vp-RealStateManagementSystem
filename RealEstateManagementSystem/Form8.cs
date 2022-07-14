@@ -48,7 +48,7 @@ namespace RealEstateManagementSystem
             dataGridView1.Columns.Clear();
             dataGridView1.Columns.Add("Id", "ID");
             dataGridView1.Columns.Add("name", "Name");
-            dataGridView1.Columns.Add("email", "Name");
+            dataGridView1.Columns.Add("email", "E-mail");
             dataGridView1.Columns.Add("cnic", "NIC Number");
             dataGridView1.Columns.Add("phoneNumber", "Phone Number");
             dataGridView1.Columns.Add("gender", "Gender");

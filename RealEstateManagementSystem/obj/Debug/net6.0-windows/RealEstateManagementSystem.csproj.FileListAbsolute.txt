@@ -34,3 +34,7 @@ D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSyste
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form10.resources
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form8.resources
 D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form9.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form11.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form12.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form13.resources
+D:\University\Semester05\VP\RealEstateManagementSystem\RealEstateManagementSystem\obj\Debug\net6.0-windows\RealEstateManagementSystem.Form14.resources
