@@ -97,6 +97,7 @@ namespace RealEstateManagementSystem
                     textBox2.Text = property.zipCode;
                     comboBox2.Text = property.propertyType;
                     textBox3.Text = property.size;
+                    textBox4.Text = property.price;
                     if(property.view == "East Open")
                     {
                         checkBox1.Checked = true;
@@ -133,6 +134,7 @@ namespace RealEstateManagementSystem
             checkBox2.Checked = false;
             checkBox3.Checked = false;
             comboBox4.Text = "";
+            textBox4.Clear();
 
         }
         public void randID()
@@ -150,6 +152,7 @@ namespace RealEstateManagementSystem
             string zipcode = textBox2.Text;
             string propertyType = comboBox2.Text;
             string size = textBox3.Text;
+            string price = textBox4.Text;
             string view;
             if(checkBox1.Checked == true)
             {
@@ -167,7 +170,7 @@ namespace RealEstateManagementSystem
             {
                 clientId  = ((KeyValuePair<string, string>)comboBox4.SelectedItem).Key;
             }
-            if (city.Trim().Length > 0 && state.Trim().Length > 0 && zipcode.Trim().Length > 0 && propertyType.Trim().Length > 0 && size.Trim().Length > 0 && view.Trim().Length > 0 && address.Trim().Length > 0 && ownerId.Trim().Length > 0)
+            if (city.Trim().Length > 0 && state.Trim().Length > 0 && zipcode.Trim().Length > 0 && propertyType.Trim().Length > 0 && size.Trim().Length > 0 && view.Trim().Length > 0 && address.Trim().Length > 0 && ownerId.Trim().Length > 0 && price.Trim().Length > 0)
             {
                 randID();
                 EstateProperty property = new EstateProperty()
@@ -178,6 +181,7 @@ namespace RealEstateManagementSystem
                     zipCode = zipcode,
                     propertyType = propertyType,
                     size = size,
+                    price = price,
                     view = view,
                     address = address,
                     owner = ownerId,

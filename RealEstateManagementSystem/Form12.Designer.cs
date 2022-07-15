@@ -50,6 +50,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -275,12 +277,33 @@
             this.comboBox4.Size = new System.Drawing.Size(287, 28);
             this.comboBox4.TabIndex = 21;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(60, 430);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 28);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Price";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.InfoText;
+            this.textBox4.ForeColor = System.Drawing.SystemColors.Info;
+            this.textBox4.Location = new System.Drawing.Point(217, 431);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(208, 27);
+            this.textBox4.TabIndex = 23;
+            // 
             // Form12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1013, 550);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox3);
@@ -335,5 +358,7 @@
         private ComboBox comboBox3;
         private Label label10;
         private ComboBox comboBox4;
+        private Label label11;
+        private TextBox textBox4;
     }
 }

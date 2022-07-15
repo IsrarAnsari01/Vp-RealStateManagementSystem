@@ -34,15 +34,20 @@ namespace RealEstateManagementSystem
             if (e.ColumnIndex == dataGridView1.Columns["dataGridViewDeleteButton"].Index)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                var respose_02 = client.Get("Owners/" + row.Cells[7].Value);
+                var respose_02 = client.Get("Owners/" + row.Cells[9].Value);
                 Owner owner = respose_02.ResultAs<Owner>();
-                if(row.Cells[8].Value != null && row.Cells[8].Value != "")
+                if (row.Cells[10].Value != null && row.Cells[10].Value != "")
                 {
-                    var respose_03 = client.Get("Clients/" + row.Cells[8].Value);
+                    var respose_03 = client.Get("Clients/" + row.Cells[10].Value);
                     Client iClient = respose_03.ResultAs<Client>();
-                    MessageBox.Show("Property Detail Information \n City " + row.Cells[1].Value + "\n State " + row.Cells[2].Value + "\n Property Type " + row.Cells[4].Value + "\n Property Location " + row.Cells[6].Value + " \n Owner Information \n Name " + owner.name + "\n Email " + owner.email + "Phone number " + owner.phoneNumber, "Information \n Client Information \n Name " + iClient.name + " CNIC / NIC " + iClient.cnic + "\n Gender " + iClient.gender + " \n Phone Number" + iClient.phoneNumber, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    MessageBox.Show("Property Detail Information \n City " + row.Cells[1].Value + "\n State " + row.Cells[2].Value + "\n Property Type " + row.Cells[4].Value + "\n Property Location " + row.Cells[8].Value + " \n \n Owner Information \n  \n Name " + owner.name + "\n Email " + owner.email + "Phone number " + owner.phoneNumber + "\n \n Client Information \n \n Name " + iClient.name + "\n  CNIC / NIC " + iClient.cnic + "\n Gender " + iClient.gender + " \n Phone Number" + iClient.phoneNumber, "Property Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 }
-                MessageBox.Show("Property Detail Information \n City " + row.Cells[1].Value+ "\n State " + row.Cells[2].Value + "\n Property Type "+ row.Cells[4].Value + "\n Property Location " + row.Cells[6].Value +" \n Owner Information \n Name " + owner.name + "\n Email " + owner.email + "Phone number " + owner.phoneNumber, "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Property Detail Information \n City " + row.Cells[1].Value + "\n State " + row.Cells[2].Value + "\n Property Type " + row.Cells[4].Value + "\n Property Location " + row.Cells[8].Value + " \n \n  Owner Information \n \n Name " + owner.name + "\n Email " + owner.email + "Phone number " + owner.phoneNumber, "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                }
+                return;
             }
         }
 
@@ -63,9 +68,10 @@ namespace RealEstateManagementSystem
             dataGridView1.Columns.Add("propertyType", "Property Type");
             dataGridView1.Columns.Add("view", "View");
             dataGridView1.Columns.Add("size", "Property Size");
+            dataGridView1.Columns.Add("price", "Property Price");
             dataGridView1.Columns.Add("address", "Full Address");
-            dataGridView1.Columns.Add("owner", "Owner Name");
-            dataGridView1.Columns.Add("client", "Client Name");
+            dataGridView1.Columns.Add("owner", "Owner Id");
+            dataGridView1.Columns.Add("client", "Client Id");
             dataGridView1.Columns.Add(view);
             if (EstateProperty != null)
             {
@@ -73,26 +79,7 @@ namespace RealEstateManagementSystem
                 {
                     if (items.Value.owner != null)
                     {
-                        var respose_02 = client.Get("Owners/" + items.Value.owner);
-                        Owner owner = respose_02.ResultAs<Owner>();
-                        var comboSource01 = new Dictionary<string, string>();
-                       
-                        comboSource01.Add(owner.Id, owner.name);
-                        comboBox1.DataSource = new BindingSource(comboSource01, null);
-                        comboBox1.DisplayMember = "Value";
-                        comboBox1.ValueMember = "Key";
-                        if (items.Value.client != null)
-                        {
-                            var respose_03 = client.Get("Clients/" + items.Value.client);
-                            Client iClient = respose_03.ResultAs<Client>();
-                            clientName = iClient.name;
-                          
-
-                        }
-                        string interestedclient = items.Value.client != null ? clientName : "";
-
-
-                        dataGridView1.Rows.Add(items.Value.Id, items.Value.city, items.Value.state, items.Value.zipCode, items.Value.propertyType, items.Value.view, items.Value.size, items.Value.address, owner.name, interestedclient);
+                        dataGridView1.Rows.Add(items.Value.Id, items.Value.city, items.Value.state, items.Value.zipCode, items.Value.propertyType, items.Value.view, items.Value.size, items.Value.price, items.Value.address, items.Value.owner, items.Value.client);
                     }
                 }
             }

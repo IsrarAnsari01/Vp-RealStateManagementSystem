@@ -14,6 +14,7 @@ namespace RealEstateManagementSystem
         public string zipCode { get; set; }
         public string propertyType { get; set; }
         public string size { get; set; }
+        public string price { get; set; }
         public string view { get; set; }
         public string address { get; set; }
         public string owner { get; set; }

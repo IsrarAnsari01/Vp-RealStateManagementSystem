@@ -52,6 +52,8 @@ namespace RealEstateManagementSystem
             dataGridView1.Columns.Add("state", "State");
             dataGridView1.Columns.Add("zipCode", "Zip Code");
             dataGridView1.Columns.Add("propertyType", "Property Type");
+            dataGridView1.Columns.Add("size", "Property Size");
+            dataGridView1.Columns.Add("price", "Property Price");
             dataGridView1.Columns.Add("view", "View");
             dataGridView1.Columns.Add("address", "Full Address");
             dataGridView1.Columns.Add("owner", "Owner Name");
@@ -73,7 +75,7 @@ namespace RealEstateManagementSystem
 
                         }
                         string interestedclient = items.Value.client != null ? clientName : "";
-                        dataGridView1.Rows.Add(items.Value.Id, items.Value.city, items.Value.state, items.Value.zipCode, items.Value.propertyType, items.Value.view, items.Value.address, owner.name, interestedclient);
+                        dataGridView1.Rows.Add(items.Value.Id, items.Value.city, items.Value.state, items.Value.zipCode, items.Value.propertyType, items.Value.size, items.Value.price, items.Value.view, items.Value.address, owner.name, interestedclient);
                     }
                 }
             }
