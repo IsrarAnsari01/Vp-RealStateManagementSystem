@@ -6,7 +6,7 @@ University Project for learning purposes
 2. Owner 
 3. Client 
 
-### Functionlities 
+### functionalites 
 - Pre-defined Login (username: group8ia, password: group8ia)
 - add/update/delete/list owners
 - add/update/delete/list clients 
